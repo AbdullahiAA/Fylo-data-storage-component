@@ -15,13 +15,14 @@ body {
     background-color: $veryDarkBlue;
     background-image: url(./images/bg-mobile.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: .5px;
 }
 
 .container {
@@ -53,7 +54,6 @@ main {
         display: flex;
         flex-direction: row;
         gap: 1em;
-
 
         a {
             text-decoration: none;
@@ -105,7 +105,6 @@ main {
                 width: 12px;
                 height: 12px;
                 background-color: white;
-                z-index: 100;
                 position: absolute;
                 right: 1.5px;
                 border-radius: 50%;
@@ -127,21 +126,86 @@ main {
         text-transform: uppercase;
         font-weight: 700;
         position: absolute;
-        bottom: -25%;
+        top: 100%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         padding: 12px 25px;
-        // line-height: 1.5;
-        text-align: center;
-        // justify-content: center;
-        min-width: 200px;
+        width: 200px;
         border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         span {
             color: $veryDarkBlue;
-            font-size: 3em;
+            font-size: 2.5em;
             margin-right: 6px;
         }
     }
+}
 
+.attribution {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: $paleBlue;
+    font-size: 11px;
+    text-align: center;
+    
+    a {
+        color: $paleBlue;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        background-image: url(./images/bg-desktop.png);
+        background-size: 100% 50%;
+        background-position-y: bottom;
+    }
+
+    main {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 30px;
+    }
+    
+    .main__header {
+        flex-basis: 300px;
+    }
+
+    .main__body {
+        flex-grow: 1;
+        padding-bottom: 2.5em !important;
+        height: 150px;
+        position: relative;
+        bottom: 0;
+
+        .storage-usage {
+            text-align: left;
+        }
+
+        .storage-left {
+            left: initial;
+            transform: initial;
+            top: -48px;
+            right: 2.5em;
+            border-bottom-right-radius: 0px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: -24px;
+                border-left: 25px solid transparent;
+                border-bottom: 25px solid transparent;
+                border-right: 25px solid white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        width: 70%;
+    }
 }
