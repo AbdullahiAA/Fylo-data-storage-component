@@ -11,7 +11,9 @@
   <!-- Foogle Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <!-- font-family: 'Raleway', sans-serif; -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./styles.css">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -24,7 +26,7 @@
   <div class="container">
     <main>
       <div class="main__header">
-        <img src="./images/logo.svg" alt="Fylo Logo">
+        <img class="logo" src="./images/logo.svg" alt="Fylo Logo">
         <div class="header__icons">
           <a href="#" aria-label="Document">
             <img src="./images/icon-document.svg" alt="Document">
@@ -39,15 +41,19 @@
       </div>
 
       <div class="main__body">
-        <p>You’ve used 815 GB of your storage</p>
+        <p class="storage-usage">
+          You’ve used <span>815 GB</span> of your storage
+        </p>
+        
         <div class="progress-bar">
           <div class="used-storage"></div>
-          <div class="total-storage"></div>
-          <div class="storage-range">
-            <span>0 GB</span>
-            <span>1000 GB</span>
-          </div>
         </div>
+        
+        <div class="storage-range">
+          <span>0 GB</span>
+          <span>1000 GB</span>
+        </div>
+        
         <div class="storage-left">
           <span>185</span> GB Left
         </div>
